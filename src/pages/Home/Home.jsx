@@ -5,8 +5,7 @@ import BurgerMenü from "../../components/BurgerMenü/BurgerMenü";
 
 const Home = () => {
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
