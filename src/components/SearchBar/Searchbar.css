@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 19px;
+  padding-inline: 20px;
+}
+
+nav input {
+  border-radius: 100px;
+  border: unset;
+  padding: 7.5px 18px;
+  font-family: Roboto-Regular;
+  width: 100%;
+  background-color: #ebebeb;
+}
+
+nav input::placeholder {
+  color: #909090;
+  font-family: Roboto-Regular;
+  font-size: 16px;
+}
