@@ -1,6 +1,12 @@
-import "./DarkLightmode.css";
+import "./Darklightmode.css";
+import dark_mode from "/src/assets/dark_mode.svg";
 const DarkLightmode = () => {
-  return <section></section>;
+  return (
+    <div>
+      {" "}
+      <img src={dark_mode} alt="" />
+    </div>
+  );
 };
 
 export default DarkLightmode;
