@@ -1,9 +1,10 @@
 import "./BurgerMenü.css";
-const BurgerMenü = () => {
+const BurgerMenü = ({ onClick }) => {
+
   return (
-    <section>
+    <div className="burger-menu" onClick={onClick}>
       <img src="./src/assets/menu.png" alt="burger menu" />
-    </section>
+    </div>
   );
 }
  
