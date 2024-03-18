@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../public/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Black;
+  src: url(../public/fonts/Roboto-Black.ttf);
+}
+:root {
+  --colorgradient: linear-gradient(to bottom left, #ffcb05, #ffe0c2);
+  --bg: #ccdadd;
+}
