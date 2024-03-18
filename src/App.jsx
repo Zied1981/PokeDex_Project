@@ -4,13 +4,15 @@ import Home from "./pages/Home/Home";
 import Detailpage from "./pages/Detailpage/Detailpage";
 
 function App() {
-  return <>home</>;
+  return (
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/detail/:id" element={<Detailpage />} />
+    </Routes>
+  </BrowserRouter>
+  )
 }
 
 export default App;
-<BrowserRouter>
-  <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/detail/:id" element={<Detailpage />} />
-  </Routes>
-</BrowserRouter>;
+

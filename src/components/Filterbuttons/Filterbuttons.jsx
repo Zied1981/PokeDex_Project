@@ -1,6 +1,9 @@
 import "./Filterbuttons.css";
 const Filterbuttons = () => {
-  return <section></section>;
+  return (
+    <>
+    </>
+  )
 };
 
 export default Filterbuttons;

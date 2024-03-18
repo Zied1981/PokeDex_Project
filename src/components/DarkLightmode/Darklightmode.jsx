@@ -1,6 +1,9 @@
 import "./DarkLightmode.css";
 const DarkLightmode = () => {
-  return <section></section>;
+  return (
+    <>
+    </>
+  )
 };
 
 export default DarkLightmode;

@@ -1,6 +1,9 @@
 import "./Pokecard.css";
 const Pokecard = () => {
-  return <section></section>;
+  return (
+    <>
+    </>
+  )
 };
 
 export default Pokecard;

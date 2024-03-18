@@ -1,6 +1,10 @@
 import "./BurgerMenü.css";
 const BurgerMenü = () => {
-  return <section></section>;
-};
-
+  return (
+    <section>
+      <img src="./src/assets/menu.png" alt="burger menu" />
+    </section>
+  );
+}
+ 
 export default BurgerMenü;

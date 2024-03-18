@@ -1,6 +1,9 @@
 import "./Searchbar.css";
 const SearchBar = () => {
-  return <section></section>;
+  return (
+    <>
+    </>
+  )
 };
 
 export default SearchBar;

@@ -1,6 +1,9 @@
 import "./Detailpage.css";
 const Detailpage = () => {
-  return <section></section>;
+  return (
+    <>
+    </>
+  )
 };
 
 export default Detailpage;

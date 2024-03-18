@@ -1,6 +1,9 @@
 import "./Filterpage.css";
 const Filterpage = () => {
-  return <section></section>;
+  return (
+    <>
+    </>
+  )
 };
 
 export default Filterpage;

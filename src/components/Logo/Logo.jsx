@@ -1,6 +1,9 @@
 import "./Logo.css";
 const Logo = () => {
-  return <section></section>;
+  return (
+    <>
+    </>
+  )
 };
 
 export default Logo;
