@@ -1,9 +1,11 @@
+import { useState } from "react";
 import "./Home.css";
-import BurgerMenü from './../../components/BurgerMenü/BurgerMenü';
 import Filterpage from "../../components/Filterpage/Filterpage";
+import BurgerMenü from "../../components/BurgerMenü/BurgerMenü";
+
 const Home = () => {
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
