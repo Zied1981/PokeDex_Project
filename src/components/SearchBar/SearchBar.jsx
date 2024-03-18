@@ -1,10 +1,19 @@
+import { useState } from "react";
+import BurgerMenü from "../BurgerMenü/BurgerMenü";
 import DarkLightmode from "../DarkLightmode/Darklightmode";
 import "./Searchbar.css";
 const SearchBar = () => {
+  const [searchInput, setSearchInput] = useState("");
+
   return (
     <nav>
-      <div></div>
-      <input type="search" placeholder="Search Pokemon" />
+      <BurgerMenü />
+      <input
+        onChange={(event) => setSearchInput(event.target.value)}
+        value={searchInput}
+        type="search"
+        placeholder="Search Pokemon"
+      />
       <DarkLightmode />
     </nav>
   );

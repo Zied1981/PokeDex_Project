@@ -4,7 +4,6 @@ import Filterpage from "../../components/Filterpage/Filterpage";
 import BurgerMenü from "../../components/BurgerMenü/BurgerMenü";
 
 const Home = () => {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,7 +14,7 @@ const Home = () => {
       <BurgerMenü onClick={toggleMenu} />
       {isMenuOpen && <Filterpage />}
     </div>
-  )
+  );
 };
 
 export default Home;
