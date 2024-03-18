@@ -9,12 +9,12 @@ const Filterpage = () => {
       try {
         const response = await fetch('https://pokeapi.co/api/v2/type');
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error('Fehler beim Laden der Daten');
         }
         const data = await response.json();
         setPokemonTypes(data.results);
       } catch (error) {
-        console.error('Fetch error:', error);
+        console.error('Fehler beim Laden der Daten', error);
       }
     };
 
