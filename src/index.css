@@ -16,6 +16,7 @@ img {
   font-family: Roboto-Black;
   src: url(../public/fonts/Roboto-Black.ttf);
 }
+
 :root {
   --colorgradient: linear-gradient(to bottom left, #ffcb05, #ffe0c2);
   --bg: #ccdadd;
