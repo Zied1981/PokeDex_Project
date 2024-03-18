@@ -107,7 +107,7 @@ const Filterpage = () => {
             <h2>{selectedType.name} Pokemon</h2>
             <ul>
               {pokemonList.map((pokemon, index) => (
-                <li key={index}>{pokemon.name} <img src={pokemon.sprites.front_default} alt="bild" /></li>
+                <li key={index}>{pokemon.name} <img src={pokemon.sprites.front_default} alt="" /></li>
               ))}
             </ul>
           </div>
