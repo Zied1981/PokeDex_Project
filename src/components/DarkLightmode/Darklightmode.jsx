@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Darklightmode.css";
 import dark_mode from "/src/assets/dark_mode.svg";
 const DarkLightmode = () => {
-  const [switcher, setSwitcher] = useState(true);
+  const [switcher, setSwitcher] = useState(false);
   const darkLightSwitch = () => {
     setSwitcher((switcher) => !switcher);
     if (switcher === true) {

@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import "./Detailpage.css";
 import { useEffect, useState } from "react";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 const Detailpage = () => {
   // *useState für Name, Bild und Type
