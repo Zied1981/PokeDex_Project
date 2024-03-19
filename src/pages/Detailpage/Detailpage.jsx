@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import "./Detailpage.css";
 import { useEffect, useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import Logo from "../../components/Logo/Logo";
 
 const Detailpage = () => {
   // *useState für Name, Bild und Type
@@ -20,13 +21,18 @@ const Detailpage = () => {
 
   return (
     <section>
+      <Logo />
       <SearchBar />
       {content ? (
-        <div>
-          <img src={content.sprites.front_default} alt="pokemon" />
-          <p>{content.id}</p>
-          <p>{content.name}</p>
-          <div>
+        <div className="details">
+          <div className="image-bg">
+            <img src={content.sprites.front_default} alt="pokemon" />
+          </div>
+          <div className="name">
+            <p>#{content.id}</p>
+            <p>{content.name}</p>
+          </div>
+          <div className="buttons">
             {content.types.map((item, index) => (
               <div key={index}>
                 <button className={item.type.name}> {item.type.name}</button>

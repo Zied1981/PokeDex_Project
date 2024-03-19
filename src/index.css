@@ -21,3 +21,7 @@ img {
   --colorgradient: linear-gradient(to bottom left, #ffcb05, #ffe0c2);
   --bg: #ccdadd;
 }
+
+html {
+  font-family: Roboto-Regular;
+}
