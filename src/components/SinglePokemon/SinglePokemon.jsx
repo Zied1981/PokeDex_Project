@@ -13,8 +13,6 @@ const SinglePokemon = ({ bild }) => {
 
   console.log(data);
 
-  data && data.id < 10 ? `00${data.id}` : `${data.id}`;
-
   return data ? (
     <section className="singlebox">
       <img src={data.sprites.front_default} alt="bilder" />
