@@ -16,6 +16,11 @@
   position: relative;
   border-radius: 25px;
 }
+
+.poke-box p {
+  text-transform: capitalize;
+}
+
 .pokname {
   position: absolute;
   right: 20px;

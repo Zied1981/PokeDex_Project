@@ -1,11 +1,11 @@
 import "./BurgerMenü.css";
+import BurgerImg from "/src/assets/menu.png";
 const BurgerMenü = ({ onClick }) => {
-
   return (
     <div className="burger-menu" onClick={onClick}>
-      <img src="./src/assets/menu.png" alt="burger menu" />
+      <img src={BurgerImg} alt="burger menu" />
     </div>
   );
-}
- 
+};
+
 export default BurgerMenü;
