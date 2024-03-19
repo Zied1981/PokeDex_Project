@@ -10,7 +10,7 @@ const Pokecard = () => {
   const { searchInput, setSearchInput } = useContext(SearchValueContext);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon-form?offset=0&limit=100")
+    fetch("https://pokeapi.co/api/v2/pokemon-form?offset=0&limit=200")
       .then((res) => res.json())
       .then((fetchdata) => setBigdata(fetchdata.results))
 
@@ -31,7 +31,8 @@ const Pokecard = () => {
               <Link to={`/detail/${item.name}`}>
                 <article key={index} className="poke-box">
                   <SinglePokemon bild={item.url} /* singleData={bigdata} */ />
-                  <p>{item.name}</p>
+                  <p className="pokname">{item.name}</p>
+                  <p className="unterediv"></p>
                 </article>
               </Link>
             ) : (

@@ -11,12 +11,25 @@ const SinglePokemon = ({ bild }) => {
       .catch((err) => console.log("fehler im fetch", err));
   }, []);
 
+  let numbers = "";
+  if (data) {
+    if (data.id < 10) {
+      numbers = `000${data.id}`;
+    } else if (data.id > 10 && data.id < 100) {
+      numbers = `00${data.id}`;
+    } else if (data.id >= 100 && data.id < 1000) {
+      numbers = `0${data.id}`;
+    } else {
+      `${data.id}`;
+    }
+  }
+
   console.log(data);
 
   return data ? (
     <section className="singlebox">
       <img src={data.sprites.front_default} alt="bilder" />
-      <p className="pok-id">#{data.id}</p>
+      <p className="pok-id">#{numbers}</p>
     </section>
   ) : (
     "laden"

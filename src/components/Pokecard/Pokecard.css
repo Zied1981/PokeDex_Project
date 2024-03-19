@@ -3,14 +3,14 @@
   margin: 0 3vw;
 
   grid-template-columns: repeat(2, 1fr);
-  gap: 2vw;
+  gap: 4vw 3vw;
 }
 .kacheln a {
   text-decoration: none;
   color: black;
 }
 .poke-box {
-  background-color: rgb(233, 233, 90);
+  background: var(--colorgradient);
   width: 45vw;
   height: 10rem;
   position: relative;
@@ -18,16 +18,17 @@
 }
 .pokname {
   position: absolute;
-  right: 20px;
-  bottom: 8px;
+  right: 22px;
+  bottom: 11px;
   z-index: 1;
+  text-transform: capitalize;
 }
 .unterediv {
   position: absolute;
   width: 100%;
   bottom: 0;
   right: 0;
-  background-color: rgb(251, 88, 88);
+  background-color: rgb(251, 245, 245);
   padding: 20px 0;
   z-index: 0;
   border-radius: 0 0 25px 25px;

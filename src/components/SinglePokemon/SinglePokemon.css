@@ -1,12 +1,17 @@
+.singlebox {
+  display: flex;
+  justify-content: center;
+}
+
 .singlebox img {
   width: 180px;
   height: 170px;
   margin-top: -30px;
-  margin-left: 10px;
+  margin-inline: auto;
 }
 .pok-id {
   position: absolute;
   left: 20px;
-  bottom: 8px;
+  bottom: 11px;
   z-index: 1;
 }
