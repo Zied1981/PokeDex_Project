@@ -16,10 +16,11 @@ const Detailpage = () => {
     fetch(`https://pokeapi.co/api/v2/pokemon-form/${id}`)
       .then((res) => res.json())
       .then((data) => setContent(data));
-  }, []);
+  }, [id]);
 
   return (
     <section>
+      <SearchBar />
       {content ? (
         <div>
           <img src={content.sprites.front_default} alt="pokemon" />
@@ -28,7 +29,7 @@ const Detailpage = () => {
           <div>
             {content.types.map((item, index) => (
               <div key={index}>
-                <button> {item.type.name}</button>
+                <button className={item.type.name}> {item.type.name}</button>
               </div>
             ))}
           </div>

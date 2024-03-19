@@ -1,0 +1,53 @@
+.bug {
+  background-color: #3bb900;
+}
+
+.dark {
+  background-color: #000000;
+}
+
+.dragon {
+  background-color: #00458a;
+}
+
+.electric {
+  background-color: #ffec00;
+}
+
+.fairy {
+  background-color: #fc91ff;
+}
+
+.fighting {
+  background-color: #ff0000;
+}
+
+.fire {
+  background-color: #ff6100;
+}
+
+.flying {
+  background-color: #ccdadd;
+}
+
+.ghost {
+  background-color: #9b00ff;
+}
+
+.grass {
+  background-color: #09b200;
+}
+
+case"grass": return "#09B200";
+case"ground": return "#A86000";
+case"ice": return "#00D0FF";
+case"normal": return "#AFAFAF ";
+case"plant": return "#0CFF00";
+case"poison": return "#D300FF";
+case"psychic": return "#FE4CF1";
+case"rock": return "#EDBF00";
+case"steel": return "#006AB1";
+case"water": return "#009CFF";
+case"unknown": return "#00CC89";
+case"shadow": return "#970054";
+default: return "#000000";
