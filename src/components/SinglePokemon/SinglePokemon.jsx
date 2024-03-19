@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./SinglePokemon.css";
-const SinglePokemon = ({ bild /* singleData  */ }) => {
+const SinglePokemon = ({ bild }) => {
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -12,14 +12,13 @@ const SinglePokemon = ({ bild /* singleData  */ }) => {
   }, []);
 
   console.log(data);
-  if (data.id < 10) {
-    return "00";
-  }
+
+  data && data.id < 10 ? `00${data.id}` : `${data.id}`;
 
   return data ? (
-    <section>
-      <p>{data.id}</p>
+    <section className="singlebox">
       <img src={data.sprites.front_default} alt="bilder" />
+      <p className="pok-id">#{data.id}</p>
     </section>
   ) : (
     "laden"

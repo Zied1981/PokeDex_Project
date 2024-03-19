@@ -6,7 +6,7 @@ const Pokecard = () => {
   const [bigdata, setBigdata] = useState();
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon-form?offset=0&limit=1473")
+    fetch("https://pokeapi.co/api/v2/pokemon-form?offset=0&limit=200")
       .then((res) => res.json())
       .then((fetchdata) => setBigdata(fetchdata.results))
 
@@ -23,8 +23,9 @@ const Pokecard = () => {
           bigdata.map((item, index) => (
             <Link to={`/detail/${item.name}`}>
               <article key={index} className="poke-box">
-                <SinglePokemon bild={item.url} /* singleData={bigdata} */ />
-                <p>{item.name}</p>
+                <SinglePokemon bild={item.url} />
+                <p className="pokname">{item.name}</p>
+                <p className="unterediv"></p>
               </article>
             </Link>
           ))
