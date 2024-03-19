@@ -53,41 +53,41 @@ const Filterpage = () => {
       case "dragon":
         return "#00458a";
       case "electric":
-      return "#FFEC00";
+        return "#FFEC00";
       case "fairy":
-      return "#FC91FF";
+        return "#FC91FF";
       case "fighting":
-      return "#FF0000 ";
+        return "#FF0000 ";
       case "fire":
-      return "##FF6100";
+        return "##FF6100";
       case "flying":
-      return "#ccdadd";
+        return "#ccdadd";
       case "ghost":
-      return "#9B00FF";
+        return "#9B00FF";
       case "grass":
-      return "#09B200";
+        return "#09B200";
       case "ground":
-      return "#A86000";
+        return "#A86000";
       case "ice":
-      return "#00D0FF";
+        return "#00D0FF";
       case "normal":
-      return "#AFAFAF ";
+        return "#AFAFAF ";
       case "plant":
-      return "#0CFF00";
+        return "#0CFF00";
       case "poison":
-      return "#D300FF";
+        return "#D300FF";
       case "psychic":
-      return "#FE4CF1";
+        return "#FE4CF1";
       case "rock":
-      return "#EDBF00";
+        return "#EDBF00";
       case "steel":
-      return "#006AB1";
+        return "#006AB1";
       case "water":
-      return "#009CFF";
+        return "#009CFF";
       case "unknown":
-      return "#00CC89";
+        return "#00CC89";
       case "shadow":
-      return "#970054";
+        return "#970054";
       default:
         return "#000000"; 
     }
