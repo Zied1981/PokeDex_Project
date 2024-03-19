@@ -15,7 +15,7 @@ const SinglePokemon = ({ bild }) => {
   if (data) {
     if (data.id < 10) {
       numbers = `000${data.id}`;
-    } else if (data.id > 10 && data.id < 100) {
+    } else if (data.id >= 10 && data.id < 100) {
       numbers = `00${data.id}`;
     } else if (data.id >= 100 && data.id < 1000) {
       numbers = `0${data.id}`;
