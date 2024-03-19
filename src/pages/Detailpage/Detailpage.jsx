@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import "./Detailpage.css";
 import { useEffect, useState } from "react";
 
@@ -5,9 +6,12 @@ const Detailpage = () => {
   // *useState für Name, Bild und Type
   const [content, setContent] = useState();
 
+  // * useParams für Namen für dynamischen Link
+  const { id } = useParams();
+  console.log(id);
+
   // *Fetch für Name, Bild und Type
   useEffect(() => {
-    let id = "bulbasaur";
     fetch(`https://pokeapi.co/api/v2/pokemon-form/${id}`)
       .then((res) => res.json())
       .then((data) => setContent(data));
