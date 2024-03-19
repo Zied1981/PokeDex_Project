@@ -4,6 +4,7 @@ nav {
   align-items: center;
   gap: 19px;
   padding-inline: 20px;
+  margin-bottom: 30px;
 }
 
 nav input {

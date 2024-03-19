@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import logoImg from "/src/assets/Logo.png";
 import "./Logo.css";
 
 const Logo = () => {
   return (
     <section className="logo">
       <Link to="/">
-        <img src="./src/assets/Logo.png" alt="logo" />
+        <img src={logoImg} alt="logo" />
       </Link>
     </section>
   );

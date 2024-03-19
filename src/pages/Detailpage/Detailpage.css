@@ -1,53 +1,167 @@
+.details {
+  text-align: center;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-bg {
+  background: var(--colorgradient);
+  margin: 0 10%;
+  width: 85%;
+  height: 150px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.image-bg img {
+  width: 300px;
+  margin-top: -100px;
+}
+
+.name {
+  font-family: Roboto-Black;
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 45px;
+  font-weight: 900;
+  color: #ffcb05;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.name p {
+  /* border: 4px solid #2c72b8; */
+  -webkit-text-stroke: 2.5px #2c72b8;
+  paint-order: stroke fill;
+  /* box-sizing: content-box;
+  /* text-shadow: -4px -4px 0 #2c72b8, 4px -4px 0 #2c72b8, -4px 4px 0 #2c72b8,
+    4px 4px 0 #2c72b8; */
+  /* text-shadow: 3px 3px 2px #000, -3px 3px 2px #000, -3px -3px 0 #000,
+    3px -3px 0 #000; */
+}
+
+.buttons {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+button {
+  border-radius: 0.5rem;
+  /* border: solid 1px black; */
+  padding: 0.8rem;
+  text-transform: uppercase;
+  color: white;
+  width: 130px;
+}
+
 .bug {
   background-color: #3bb900;
+  border: 1px solid#3bb900;
 }
 
 .dark {
   background-color: #000000;
+  border: 1px solid#000000;
 }
 
 .dragon {
   background-color: #00458a;
+  border: 1px solid#00458a;
 }
 
 .electric {
   background-color: #ffec00;
+  border: 1px solid#ffec00;
 }
 
 .fairy {
   background-color: #fc91ff;
+  border: 1px solid#fc91ff;
 }
 
 .fighting {
   background-color: #ff0000;
+  border: 1px solid#ff0000;
 }
 
 .fire {
   background-color: #ff6100;
+  border: 1px solid#ff6100;
 }
 
 .flying {
   background-color: #ccdadd;
+  border: 1px solid black;
 }
 
 .ghost {
   background-color: #9b00ff;
+  border: 1px solid#9b00ff;
 }
 
 .grass {
   background-color: #09b200;
+  border: 1px solid#09b200;
 }
 
-case"grass": return "#09B200";
-case"ground": return "#A86000";
-case"ice": return "#00D0FF";
-case"normal": return "#AFAFAF ";
-case"plant": return "#0CFF00";
-case"poison": return "#D300FF";
-case"psychic": return "#FE4CF1";
-case"rock": return "#EDBF00";
-case"steel": return "#006AB1";
-case"water": return "#009CFF";
-case"unknown": return "#00CC89";
-case"shadow": return "#970054";
-default: return "#000000";
+.ground {
+  background-color: #a86000;
+  border: 1px solid#a86000;
+}
+
+.ice {
+  background-color: #00d0ff;
+  border: 1px solid#00d0ff;
+}
+
+.normal {
+  background-color: #afafaf;
+  border: 1px solid#afafaf;
+}
+
+.plant {
+  background-color: #0cff00;
+  border: 1px solid#0cff00;
+}
+
+.poison {
+  background-color: #d300ff;
+  border: 1px solid#d300ff;
+}
+
+.psychic {
+  background-color: #fe4cf1;
+  border: 1px solid#fe4cf1;
+}
+
+.rock {
+  background-color: #edbf00;
+  border: 1px solid#edbf00;
+}
+
+.steel {
+  background-color: #006ab1;
+  border: 1px solid#006ab1;
+}
+
+.water {
+  background-color: #009cff;
+  border: 1px solid#009cff;
+}
+
+.unknown {
+  background-color: #00cc89;
+  border: 1px solid#00cc89;
+}
+
+.shadow {
+  background-color: #970054;
+  border: 1px solid#970054;
+}
