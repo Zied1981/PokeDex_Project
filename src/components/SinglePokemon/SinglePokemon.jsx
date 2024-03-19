@@ -11,10 +11,10 @@ const SinglePokemon = ({ bild /* singleData  */ }) => {
       .catch((err) => console.log("fehler im fetch", err));
   }, []);
 
-  console.log(data);
-  if (data.id < 10) {
-    return "00";
-  }
+  // console.log(data);
+  // if (data.id < 10) {
+  //   return "00";
+  // }
 
   return data ? (
     <section>
