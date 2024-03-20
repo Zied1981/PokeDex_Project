@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./SinglePokemon.css";
+import { TypeContext } from "../../context/context";
 const SinglePokemon = ({ bild }) => {
   const [data, setData] = useState();
+  const { type, setType } = useContext(TypeContext);
 
   useEffect(() => {
     fetch(`${bild}`)
@@ -9,7 +11,12 @@ const SinglePokemon = ({ bild }) => {
       .then((fetch) => setData(fetch))
 
       .catch((err) => console.log("fehler im fetch", err));
+    /*  data? setType(data.types[0].type.name); */
+    data ? setType(data.types[0].type.name) : console.log("fish");
+    /* setData(data.types[0].type.name) : console.log("nochtsfish"); */
   }, []);
+  console.log(bild);
+  console.log(data);
 
   let numbers = "";
   if (data) {

@@ -11,7 +11,7 @@ const FetchData = () => {
       .catch((err) => console.log("fehler im fetch", err));
   }, []);
 
-  console.log(fetchContext);
+  /* console.log(fetchContext); */
 };
 
 export default FetchData;
