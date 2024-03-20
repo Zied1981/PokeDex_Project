@@ -6,11 +6,11 @@ import DarkLightmode from "../DarkLightmode/Darklightmode";
 import "./Searchbar.css";
 import { MenuOpenContext, SearchValueContext } from "../../context/context";
 import { Link, useNavigate } from "react-router-dom";
+import FetchData from "../FetchData/FetchData";
 const SearchBar = (props) => {
   const { searchInput, setSearchInput } = useContext(SearchValueContext);
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuOpenContext);
   const [firstInput, setFirstInput] = useState("");
-  const [suggestions, setSuggestions] = useState();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -28,6 +28,7 @@ const SearchBar = (props) => {
 
   return (
     <nav>
+      <FetchData />
       <Link style={{ cursor: "pointer" }} className={props.noMenu} to="/">
         <img src={Arrow} alt="" />
       </Link>
@@ -42,6 +43,7 @@ const SearchBar = (props) => {
         type="search"
         placeholder="Search Pokemon"
       />
+
       <DarkLightmode style={{ cursor: "pointer" }} />
     </nav>
   );
