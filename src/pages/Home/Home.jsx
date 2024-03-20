@@ -7,19 +7,11 @@ import Pokecard from "../../components/Pokecard/Pokecard";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   return (
     <>
       <Logo />
       <Pokecard />
-
-      <div className="burger-menu">
-        <BurgerMenü onClick={toggleMenu} />
-        {isMenuOpen && <Filterpage />}
-      </div>
     </>
   );
 };
