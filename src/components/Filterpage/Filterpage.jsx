@@ -10,7 +10,7 @@ const Filterpage = () => {
   const [pokemonList, setPokemonList] = useState([]);
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuOpenContext);
   const { filter, setFilter } = useContext(FilterContext);
-
+  console.log(filter);
   useEffect(() => {
     const fetchData = async () => {
       try {
