@@ -14,7 +14,8 @@ const Filterpage = () => {
           throw new Error('Netzwerk Fehler');
         }
         const data = await response.json();
-        setPokemonTypes(data.results);
+        const filteredTypes = data.results.filter(type => type.name !== "unknown" && type.name !== "shadow");
+        setPokemonTypes(filteredTypes);
       } catch (error) {
         console.error('Fehler beim anrufen der Daten (Fetch Fehler)', error);
       }
@@ -84,10 +85,6 @@ const Filterpage = () => {
         return "#006AB1";
       case "water":
         return "#009CFF";
-      case "unknown":
-        return "#00CC89";
-      case "shadow":
-        return "#970054";
       default:
         return "#000000"; 
     }
@@ -113,9 +110,9 @@ const Filterpage = () => {
           </div>
         )}
       </section>
-      <button className='search-btn'>SEARCH</button>
     </section>
   );
 }
 
 export default Filterpage;
+
