@@ -23,7 +23,7 @@
 
 .pokname {
   position: absolute;
-  right: 22px;
+  right: 15px;
   bottom: 11px;
   z-index: 1;
   text-transform: capitalize;
