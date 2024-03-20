@@ -40,14 +40,13 @@ const Pokecard = () => {
         {fetchContext ? (
           fetchContext.map((item, index) =>
             item.name.includes(searchInput) ? (
-              Boolean(div.type() === 0) ? (
-                <Link id="link1" key={index} to={`/detail/${item.name}`}>
-                  <SinglePokemon bild={item.url} />
-                </Link>
-              ) : (
-                ""
-              )
+              // Boolean(.type(div) === 0) ? (
+
+              <SinglePokemon key={index} bild={item.url} />
             ) : (
+              // ) : (
+              //   ""
+              // )
               ""
             )
           )

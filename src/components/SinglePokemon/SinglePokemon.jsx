@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import "./SinglePokemon.css";
 import { TypeContext, FilterContext } from "../../context/context";
+import { Link } from "react-router-dom";
 const SinglePokemon = ({ bild }) => {
   const [data, setData] = useState();
   const { type, setType } = useContext(TypeContext);
@@ -37,6 +38,24 @@ const SinglePokemon = ({ bild }) => {
   return data ? (
     filter ? (
       filter === data.types[0].type.name ? (
+        <Link id="link1" to={`/detail/${data.name}`}>
+          <section className="singlebox">
+            <article className="poke-box">
+              <img
+                src={data.sprites.other["official-artwork"].front_default}
+                alt="bilder"
+              />
+              <p className="pokname">{data.name}</p>
+              <p className="unterediv"></p>
+              <p className="pok-id">#{numbers}</p>
+            </article>
+          </section>
+        </Link>
+      ) : (
+        ""
+      )
+    ) : (
+      <Link id="link1" to={`/detail/${data.name}`}>
         <section className="singlebox">
           <article className="poke-box">
             <img
@@ -48,21 +67,7 @@ const SinglePokemon = ({ bild }) => {
             <p className="pok-id">#{numbers}</p>
           </article>
         </section>
-      ) : (
-        ""
-      )
-    ) : (
-      <section className="singlebox">
-        <article className="poke-box">
-          <img
-            src={data.sprites.other["official-artwork"].front_default}
-            alt="bilder"
-          />
-          <p className="pokname">{data.name}</p>
-          <p className="unterediv"></p>
-          <p className="pok-id">#{numbers}</p>
-        </article>
-      </section>
+      </Link>
     )
   ) : (
     "laden"
