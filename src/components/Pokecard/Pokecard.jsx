@@ -7,10 +7,10 @@ import { SearchValueContext } from "../../context/context";
 import { useContext } from "react";
 const Pokecard = () => {
   const [bigdata, setBigdata] = useState();
-  const { searchInput, setSearchInput } = useContext(SearchValueContext);
+  const { searchInput } = useContext(SearchValueContext);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon-form?offset=0&limit=200")
+    fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=200")
       .then((res) => res.json())
       .then((fetchdata) => setBigdata(fetchdata.results))
 
@@ -23,7 +23,7 @@ const Pokecard = () => {
 
   return (
     <>
-      <SearchBar />
+      <SearchBar noMenu="no_menu" />
       <section className="kacheln">
         {bigdata ? (
           bigdata.map((item, index) =>

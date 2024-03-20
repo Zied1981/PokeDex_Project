@@ -1,14 +1,16 @@
 import { useContext, useState } from "react";
 import BurgerMenü from "../BurgerMenü/BurgerMenü";
+import Arrow from "/src/assets/backbtn.svg";
 import Filterpage from "../Filterpage/Filterpage";
 import DarkLightmode from "../DarkLightmode/Darklightmode";
 import "./Searchbar.css";
-import { SearchValueContext } from "../../context/context";
-import { useNavigate } from "react-router-dom";
-const SearchBar = () => {
+import { MenuOpenContext, SearchValueContext } from "../../context/context";
+import { Link, useNavigate } from "react-router-dom";
+const SearchBar = (props) => {
   const { searchInput, setSearchInput } = useContext(SearchValueContext);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isMenuOpen, setIsMenuOpen } = useContext(MenuOpenContext);
   const [firstInput, setFirstInput] = useState("");
+  const [suggestions, setSuggestions] = useState();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,8 +28,13 @@ const SearchBar = () => {
 
   return (
     <nav>
-      <BurgerMenü onClick={toggleMenu} />
-      {isMenuOpen && <Filterpage />}
+      <Link style={{ cursor: "pointer" }} className={props.noMenu} to="/">
+        <img src={Arrow} alt="" />
+      </Link>
+      <div className={props.arrow}>
+        <BurgerMenü onClick={toggleMenu} />
+      </div>
+      {isMenuOpen && <Filterpage id="hallo" className="tschau" />}
       <input
         onKeyPress={goToSite}
         onChange={(event) => setFirstInput(event.target.value)}
@@ -35,7 +42,7 @@ const SearchBar = () => {
         type="search"
         placeholder="Search Pokemon"
       />
-      <DarkLightmode />
+      <DarkLightmode style={{ cursor: "pointer" }} />
     </nav>
   );
 };

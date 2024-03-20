@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Darklightmode.css";
 import dark_mode from "/src/assets/dark_mode.svg";
-const DarkLightmode = () => {
+const DarkLightmode = ({ ...props }) => {
   const [switcher, setSwitcher] = useState(false);
   const darkLightSwitch = () => {
     setSwitcher((switcher) => !switcher);
@@ -19,7 +19,7 @@ const DarkLightmode = () => {
       document.documentElement.style.setProperty("--bg", "#000000");
     }
   };
-  return <img onClick={darkLightSwitch} src={dark_mode} alt="" />;
+  return <img {...props} onClick={darkLightSwitch} src={dark_mode} alt="" />;
 };
 
 export default DarkLightmode;

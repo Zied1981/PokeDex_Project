@@ -23,10 +23,10 @@
 
 .name {
   font-family: Roboto-Black;
-  width: 65%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 900;
   color: #ffcb05;
   text-transform: capitalize;
