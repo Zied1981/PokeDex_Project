@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
 import Cross from "/src/assets/close.svg";
 import "./Filterpage.css";
-import { MenuOpenContext } from "../../context/context";
+import { MenuOpenContext, FilterContext } from "../../context/context";
+import Logo from "../Logo/Logo";
+
 const Filterpage = () => {
   const [pokemonTypes, setPokemonTypes] = useState([]);
   const [selectedType, setSelectedType] = useState(null);
   const [pokemonList, setPokemonList] = useState([]);
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuOpenContext);
+  const { filter, setFilter } = useContext(FilterContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +19,9 @@ const Filterpage = () => {
           throw new Error("Netzwerk Fehler");
         }
         const data = await response.json();
-        const filteredTypes = data.results.filter(type => type.name !== "unknown" && type.name !== "shadow");
+        const filteredTypes = data.results.filter(
+          (type) => type.name !== "unknown" && type.name !== "shadow"
+        );
         setPokemonTypes(filteredTypes);
       } catch (error) {
         console.error("Fehler beim anrufen der Daten (Fetch Fehler)", error);
@@ -47,6 +52,8 @@ const Filterpage = () => {
   const handleTypeClick = (type) => {
     setSelectedType(type);
     fetchPokemonByType(type.url);
+    setFilter(type.name);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const getTypeColor = (type) => {
@@ -140,4 +147,3 @@ const Filterpage = () => {
 };
 
 export default Filterpage;
-
