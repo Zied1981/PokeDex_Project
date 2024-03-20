@@ -1,9 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import "./SinglePokemon.css";
-import { TypeContext } from "../../context/context";
+import { TypeContext, FilterContext } from "../../context/context";
 const SinglePokemon = ({ bild }) => {
   const [data, setData] = useState();
   const { type, setType } = useContext(TypeContext);
+  const { filter, setFilter } = useContext(FilterContext);
 
   useEffect(() => {
     fetch(`${bild}`)
@@ -12,11 +13,11 @@ const SinglePokemon = ({ bild }) => {
 
       .catch((err) => console.log("fehler im fetch", err));
     /*  data? setType(data.types[0].type.name); */
-    data ? setType(data.types[0].type.name) : console.log("fish");
+    data ? console.log(data.types[0].type.name) : console.log("fish");
     /* setData(data.types[0].type.name) : console.log("nochtsfish"); */
   }, []);
-  console.log(bild);
-  console.log(data);
+  // console.log(bild);
+  // console.log(data);
 
   let numbers = "";
   if (data) {
@@ -34,13 +35,35 @@ const SinglePokemon = ({ bild }) => {
   // console.log(data);
 
   return data ? (
-    <section className="singlebox">
-      <img
-        src={data.sprites.other["official-artwork"].front_default}
-        alt="bilder"
-      />
-      <p className="pok-id">#{numbers}</p>
-    </section>
+    filter ? (
+      filter === data.types[0].type.name ? (
+        <section className="singlebox">
+          <article className="poke-box">
+            <img
+              src={data.sprites.other["official-artwork"].front_default}
+              alt="bilder"
+            />
+            <p className="pokname">{data.name}</p>
+            <p className="unterediv"></p>
+            <p className="pok-id">#{numbers}</p>
+          </article>
+        </section>
+      ) : (
+        ""
+      )
+    ) : (
+      <section className="singlebox">
+        <article className="poke-box">
+          <img
+            src={data.sprites.other["official-artwork"].front_default}
+            alt="bilder"
+          />
+          <p className="pokname">{data.name}</p>
+          <p className="unterediv"></p>
+          <p className="pok-id">#{numbers}</p>
+        </article>
+      </section>
+    )
   ) : (
     "laden"
   );
