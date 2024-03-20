@@ -173,11 +173,17 @@ button {
   top: 30px;
   left: 65px;
   background-color: #ebebeb;
-  max-height: 128px;
+  max-height: 140px;
   overflow: hidden;
-  width: 20vw;
+  min-width: 40vw;
+  color: black;
+  padding-left: 20px;
+  padding-top: 10px;
+  border-radius: 0 0 10px 10px;
 }
 
 .show a {
+  text-decoration: none;
   margin-bottom: 7px;
+  color: black;
 }
