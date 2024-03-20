@@ -167,12 +167,15 @@ button {
 }
 
 .show {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  top: 0;
-  background-color: #e1d7dc;
+  top: 30px;
+  left: 65px;
+  background-color: #ebebeb;
   max-height: 128px;
   overflow: hidden;
+  width: 20vw;
 }
 
 .show a {

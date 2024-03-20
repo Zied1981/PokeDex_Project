@@ -37,24 +37,24 @@ const Detailpage = () => {
     }
   }
 
-  console.log(fetchContext);
-
   return (
     <section>
       <Logo />
-      <SearchBar arrow={"arrow"} />
-      <div className={searchInput ? "show" : "arrow"}>
-        {fetchContext
-          ? fetchContext.map((item, index) =>
-              item.name.includes(searchInput) ? (
-                <Link key={index} to={`/detail/${item.name}`}>
-                  {item.name}
-                </Link>
-              ) : (
-                ""
+      <div style={{ position: "relative" }}>
+        <SearchBar arrow={"arrow"} />
+        <div className={searchInput ? "show" : "arrow"}>
+          {fetchContext
+            ? fetchContext.map((item, index) =>
+                item.name.includes(searchInput) ? (
+                  <Link key={index} to={`/detail/${item.name}`}>
+                    {item.name}
+                  </Link>
+                ) : (
+                  ""
+                )
               )
-            )
-          : ""}
+            : ""}
+        </div>
       </div>
       {content ? (
         <div className="details">

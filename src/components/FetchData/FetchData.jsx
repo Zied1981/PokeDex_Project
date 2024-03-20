@@ -10,8 +10,6 @@ const FetchData = () => {
       .then((globalfetchdata) => setFetchContext(globalfetchdata.results))
       .catch((err) => console.log("fehler im fetch", err));
   }, []);
-
-  console.log(fetchContext);
 };
 
 export default FetchData;
