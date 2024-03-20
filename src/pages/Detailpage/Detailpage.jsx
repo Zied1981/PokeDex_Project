@@ -1,12 +1,16 @@
 import { useParams } from "react-router-dom";
 import "./Detailpage.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Logo from "../../components/Logo/Logo";
+import { GlobalFetchContext, SearchValueContext } from "../../context/context";
+import { Link } from "react-router-dom";
 
 const Detailpage = () => {
   // *useState für Name, Bild und Type
   const [content, setContent] = useState();
+  const { fetchContext, setFetchContext } = useContext(GlobalFetchContext);
+  const { searchInput, setSearchInput } = useContext(SearchValueContext);
 
   // * useParams für Namen für dynamischen Link
   const { id } = useParams();
@@ -33,10 +37,25 @@ const Detailpage = () => {
     }
   }
 
+  console.log(fetchContext);
+
   return (
     <section>
       <Logo />
       <SearchBar arrow={"arrow"} />
+      <div className={searchInput ? "show" : "arrow"}>
+        {fetchContext
+          ? fetchContext.map((item, index) =>
+              item.name.includes(searchInput) ? (
+                <Link key={index} to={`/detail/${item.name}`}>
+                  {item.name}
+                </Link>
+              ) : (
+                ""
+              )
+            )
+          : ""}
+      </div>
       {content ? (
         <div className="details">
           <div className="image-bg">

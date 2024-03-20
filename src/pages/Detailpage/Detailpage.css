@@ -17,7 +17,7 @@
 }
 
 .image-bg img {
-  width: 300px;
+  width: 250px;
   margin-top: -100px;
 }
 
@@ -164,4 +164,17 @@ button {
 .shadow {
   background-color: #970054;
   border: 1px solid#970054;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  background-color: #e1d7dc;
+  max-height: 128px;
+  overflow: hidden;
+}
+
+.show a {
+  margin-bottom: 7px;
 }
