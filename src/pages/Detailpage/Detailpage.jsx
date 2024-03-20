@@ -19,6 +19,20 @@ const Detailpage = () => {
       .then((data) => setContent(data));
   }, [id]);
 
+  // * if else damit wir Nuller vor den Zahlen haben
+  let numbers = "";
+  if (content) {
+    if (content.id < 10) {
+      numbers = `000${content.id}`;
+    } else if (content.id >= 10 && content.id < 100) {
+      numbers = `00${content.id}`;
+    } else if (content.id >= 100 && content.id < 1000) {
+      numbers = `0${content.id}`;
+    } else {
+      `${content.id}`;
+    }
+  }
+
   return (
     <section>
       <Logo />
@@ -32,7 +46,7 @@ const Detailpage = () => {
             />
           </div>
           <div className="name">
-            <p>#{content.id}</p>
+            <p>#{numbers}</p>
             <p>{content.name}</p>
           </div>
           <div className="buttons">
