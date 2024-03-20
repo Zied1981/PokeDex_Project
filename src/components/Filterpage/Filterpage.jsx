@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from "react";
+import Cross from "/src/assets/close.svg";
 import "./Filterpage.css";
+import { MenuOpenContext } from "../../context/context";
 const Filterpage = () => {
-
   const [pokemonTypes, setPokemonTypes] = useState([]);
   const [selectedType, setSelectedType] = useState(null);
   const [pokemonList, setPokemonList] = useState([]);
+  const { isMenuOpen, setIsMenuOpen } = useContext(MenuOpenContext);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://pokeapi.co/api/v2/type');
+        const response = await fetch("https://pokeapi.co/api/v2/type");
         if (!response.ok) {
-          throw new Error('Netzwerk Fehler');
+          throw new Error("Netzwerk Fehler");
         }
         const data = await response.json();
         setPokemonTypes(data.results);
       } catch (error) {
-        console.error('Fehler beim anrufen der Daten (Fetch Fehler)', error);
+        console.error("Fehler beim anrufen der Daten (Fetch Fehler)", error);
       }
     };
 
@@ -27,15 +29,17 @@ const Filterpage = () => {
     try {
       const response = await fetch(typeUrl);
       if (!response.ok) {
-        throw new Error('Netzwerk Fehler');
+        throw new Error("Netzwerk Fehler");
       }
       const data = await response.json();
-      const pokemonUrls = data.pokemon.map(p => p.pokemon.url);
-      const pokemonDataPromises = pokemonUrls.map(url => fetch(url).then(response => response.json()));
+      const pokemonUrls = data.pokemon.map((p) => p.pokemon.url);
+      const pokemonDataPromises = pokemonUrls.map((url) =>
+        fetch(url).then((response) => response.json())
+      );
       const pokemonData = await Promise.all(pokemonDataPromises);
       setPokemonList(pokemonData);
     } catch (error) {
-      console.error('Fehler beim anrufen der Daten (Fetch Fehler)', error);
+      console.error("Fehler beim anrufen der Daten (Fetch Fehler)", error);
     }
   };
 
@@ -89,33 +93,54 @@ const Filterpage = () => {
       case "shadow":
         return "#970054";
       default:
-        return "#000000"; 
+        return "#000000";
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <section className='filter-container'>
+    <section className="filter-container">
+      <img onClick={toggleMenu} className="cross" src={Cross} alt="" />
       <img src="./src/assets/TYPE.png" alt="" />
-      <section className='filter-content'>
-          {pokemonTypes.map((type, index) => (
-            <p className='poke-btn' key={index} onClick={() => handleTypeClick(type)} style={{ borderRadius: "0.5rem", border: "solid 1px black", color: "#FFFFFF", backgroundColor: getTypeColor(type.name), padding: '1rem', marginBottom: '5px', cursor: 'pointer' }}>
-              {type.name}
-            </p>
-          ))}
+      <section className="filter-content">
+        {pokemonTypes.map((type, index) => (
+          <p
+            className="poke-btn"
+            key={index}
+            onClick={() => handleTypeClick(type)}
+            style={{
+              borderRadius: "0.5rem",
+              border: "solid 1px black",
+              color: "#FFFFFF",
+              backgroundColor: getTypeColor(type.name),
+              padding: "1rem",
+              marginBottom: "5px",
+              cursor: "pointer",
+            }}
+          >
+            {type.name}
+          </p>
+        ))}
         {selectedType && (
           <div>
             <h2>{selectedType.name} Pokemon</h2>
             <ul>
               {pokemonList.map((pokemon, index) => (
-                <li key={index}>{pokemon.name} <img src={pokemon.sprites.front_default} alt="" /></li>
+                <li key={index}>
+                  {pokemon.name}{" "}
+                  <img src={pokemon.sprites.front_default} alt="" />
+                </li>
               ))}
             </ul>
           </div>
         )}
       </section>
-      <button className='search-btn'>SEARCH</button>
+      <button className="search-btn">SEARCH</button>
     </section>
   );
-}
+};
 
 export default Filterpage;

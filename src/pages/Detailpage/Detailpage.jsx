@@ -14,7 +14,7 @@ const Detailpage = () => {
 
   // *Fetch für Name, Bild und Type
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon-form/${id}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then((res) => res.json())
       .then((data) => setContent(data));
   }, [id]);
@@ -22,11 +22,14 @@ const Detailpage = () => {
   return (
     <section>
       <Logo />
-      <SearchBar />
+      <SearchBar arrow={"arrow"} />
       {content ? (
         <div className="details">
           <div className="image-bg">
-            <img src={content.sprites.front_default} alt="pokemon" />
+            <img
+              src={content.sprites.other["official-artwork"].front_default}
+              alt="pokemon"
+            />
           </div>
           <div className="name">
             <p>#{content.id}</p>

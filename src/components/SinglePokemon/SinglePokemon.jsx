@@ -24,11 +24,14 @@ const SinglePokemon = ({ bild }) => {
     }
   }
 
-  console.log(data);
+  // console.log(data);
 
   return data ? (
     <section className="singlebox">
-      <img src={data.sprites.front_default} alt="bilder" />
+      <img
+        src={data.sprites.other["official-artwork"].front_default}
+        alt="bilder"
+      />
       <p className="pok-id">#{numbers}</p>
     </section>
   ) : (
