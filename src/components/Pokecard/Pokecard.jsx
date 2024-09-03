@@ -1,4 +1,3 @@
-import "./Pokecard.css";
 import SinglePokemon from "../SinglePokemon/SinglePokemon";
 import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
@@ -41,9 +40,7 @@ const Pokecard = () => {
           fetchContext.map((item, index) =>
             item.name.includes(searchInput) ? (
               fetchContext ? (
-                <Link id="link1" key={index} to={`/detail/${item.name}`}>
-                  <SinglePokemon bild={item.url} />
-                </Link>
+                <SinglePokemon bild={item.url} />
               ) : (
                 ""
               )
