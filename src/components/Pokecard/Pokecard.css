@@ -1,9 +1,8 @@
 .kacheln {
   display: grid;
-  margin: 0 3vw;
-
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 9vw 4vw;
+  margin: 0 3vw;
 }
 .kacheln a {
   text-decoration: none;

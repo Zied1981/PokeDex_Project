@@ -9,6 +9,7 @@ import {
 } from "../../context/context";
 import { useContext } from "react";
 import FetchData from "../FetchData/FetchData";
+import "./Pokecard.css";
 
 const Pokecard = () => {
   // const [bigdata, setBigdata] = useState();
@@ -39,9 +40,7 @@ const Pokecard = () => {
         {fetchContext ? (
           fetchContext.map((item, index) =>
             item.name.includes(searchInput) ? (
-              <Link id="link1" key={index} to={`/detail/${item.name}`}>
-                <SinglePokemon bild={item.url} />
-              </Link>
+              <SinglePokemon bild={item.url} />
             ) : (
               ""
             )

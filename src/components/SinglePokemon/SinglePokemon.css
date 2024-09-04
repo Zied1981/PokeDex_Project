@@ -15,3 +15,8 @@
   bottom: 11px;
   z-index: 1;
 }
+
+.poke-box p:first-of-type {
+  color: black;
+  text-decoration: none;
+}
